@@ -1,0 +1,14 @@
+=form_for @user, url: login_users_path, method: 'post',  html: {class: "user"} do |f|
+  %br
+  %h3
+    Sign in
+  .field
+    = f.label :email
+    %br
+    = f.text_field :email
+  .field
+    = f.label :password
+    %br
+    = f.text_field :hashed_password
+  .actions
+    = f.submit 'Login', class:"btn btn-default"

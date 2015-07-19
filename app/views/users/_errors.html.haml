@@ -1,0 +1,6 @@
+- if @user.errors.any?
+  .panel.panel-warning
+    .panel-heading Please correct the following error(s) : 
+    %ul.list-gorup
+      - @user.errors.full_messages.each do |msg|
+        %li.list-group-item.error-message= msg 

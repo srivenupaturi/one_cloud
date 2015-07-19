@@ -1,0 +1,28 @@
+!!!
+%html
+  %head
+    %title= title yield(:title)
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+    = render 'layouts/shim'
+  %body
+    .row
+      .col-md-1
+      .col-md-10
+        = render 'layouts/header'
+      .col-md-1
+    %br
+    %br
+    %br
+    .container
+      .row
+        .col-md-1
+        .col-md-10
+          = yield
+        .col-md-1
+    .row
+      .col-md-1
+      .col-md-10
+        = render 'layouts/footer'
+      .col-md-1
