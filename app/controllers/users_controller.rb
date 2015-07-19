@@ -89,9 +89,8 @@ class UsersController < ApplicationController
   end
 
   def filter_sign_up_params
-    processed_params = params.require(:user).permit(:name, :email, :user_name)
+    processed_params = params.require(:user).permit(:name, :email)
     processed_params['hashed_password'] = User.processed_password(params[:user][:hashed_password])
-    processed_params['user_name'] = random_alphanumeric
     processed_params
   end
 
